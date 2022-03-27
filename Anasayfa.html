@@ -1,0 +1,567 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Explore Delft</title>
+<meta name="generator" content="WYSIWYG Web Builder 17 Trial Version - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/owl.carousel.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/tugemteknoloji.css" rel="stylesheet">
+<link href="css/Anasayfa.css" rel="stylesheet">
+<script src="jquery-1.12.4.min.js"></script>
+<script src="owl.carousel.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="util.min.js"></script>
+<script src="collapse.min.js"></script>
+<script src="dropdown.min.js"></script>
+<script src="skrollr.min.js"></script>
+<script src="carousel.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="wb.photocollage.min.js"></script>
+<link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.4.css">
+<script src="fancybox/jquery.easing-1.3.pack.js"></script>
+<script src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script src="fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<link rel="stylesheet" href="magnificpopup/magnific-popup.css">
+<script src="magnificpopup/jquery.magnific-popup.min.js"></script>
+<script src="wwb17.min.js"></script>
+<script>   
+   function displaylightbox(url, options)
+   {
+      options.items = { src: url };
+      options.type = 'iframe';
+      $.magnificPopup.open(options);
+   }
+</script>
+<script>   
+   $(document).ready(function()
+   {
+      $('#reviewsImage1').addClass('visibility-hidden');
+      $('#portfolio-image2').addClass('visibility-hidden');
+      $("a[href*='#todoCards']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_todoCards').offset().top-88 }, 600, 'easeOutCirc');
+      });
+      $("a[href*='#planTripLayoutGrid']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#planTripLayoutGrid').offset().top }, 600, 'easeInSine');
+      });
+      $("a[href*='#galleryLayoutGrid']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_galleryLayoutGrid').offset().top-88 }, 600, 'easeOutCirc');
+      });
+      function onScrollgalleryLayoutGrid()
+      {
+         var $obj = $("#wb_galleryLayoutGrid");
+         if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+         {
+            $obj.addClass("in-viewport");
+            AnimateCss('reviewsImage1', 'animate-fade-in-up', 0, 1000);
+            AnimateCss('portfolio-image2', 'animate-fade-in-up', 500, 1000);
+         }
+      }
+      onScrollgalleryLayoutGrid();
+      $(window).scroll(function(event)
+      {
+         onScrollgalleryLayoutGrid();
+      });
+      $("#reviewsContainer").owlCarousel({autoplayTimeout:5000, margin: 16, autoplay: true, nav: false, loop: true, dots: true, items: 2, slideBy: 1});
+      $('#navigationMenu .dropdown-toggle').dropdown({popperConfig:{placement:'bottom-start',modifiers:{computeStyle:{gpuAcceleration:false}}}});
+      $(document).on('click','.navigationMenu-navbar-collapse.show',function(e)
+      {
+         if ($(e.target).is('a') && ($(e.target).attr('class') != 'dropdown-toggle')) 
+         {
+            $(this).collapse('hide');
+         }
+      });
+      function skrollrInit()
+      {
+         skrollr.init({forceHeight: false, mobileCheck: function() { return false; }, smoothScrolling: false});
+      }
+      skrollrInit();
+      $("#Carousel1").on('slid.bs.carousel', function(e)
+      {
+         var index = $(e.relatedTarget).index();
+         switch(index)
+         {
+            case 0:
+               AnimateCss('wb_welcomeText1', 'slide-left-in', 300, 1000);
+               AnimateCss('wb_welcomeText2', 'slide-right-in', 1000, 1000);
+               AnimateCss('welcomeButton1', 'swash-in', 2000, 1000);
+               break;
+            case 1:
+               AnimateCss('wb_welcomeText3', 'scale-in-horizontal-center', 300, 1000);
+               AnimateCss('wb_welcomeText4', 'scale-in-vertical-center', 1000, 1000);
+               AnimateCss('welcomeButton2', 'twister-down-in', 2000, 1000);
+               break;
+            case 2:
+               AnimateCss('wb_welcomeText5', 'transform-rotate-in', 300, 1000);
+               AnimateCss('welcomeButton3', 'vanish-in', 2000, 1000);
+               break;
+            case 5:
+               AnimateCss('wb_welcomeText6', 'transform-roll-in', 1000, 1000);
+               break;
+         }
+      });
+      $("#Carousel1").bootstrapcarousel({interval:6000, pause: false});
+      $("a[data-rel='galleryCollage']").attr('rel', 'galleryCollage');
+      $("a[rel^='galleryCollage']").fancybox({});
+      $("#galleryCollage").photocollage({ effect: 'css', duration: 600, padding: 20, lazyload: true, matrix: '1,1,1,2,0,1,2,0,0,0,1,0,0,1,1,2,0,1,2,0,0,0,1,0,0' });
+      $('#YouTube1').magnificPopup(
+      {
+         type: 'iframe',
+         iframe: { patterns: { youtube: { index: 'youtube.com/', id: null, src: '%id%' } } }
+      });
+      $('#YouTube2').magnificPopup(
+      {
+         type: 'iframe',
+         iframe: { patterns: { youtube: { index: 'youtube.com/', id: null, src: '%id%' } } }
+      });
+      $('#YouTube3').magnificPopup(
+      {
+         type: 'iframe',
+         iframe: { patterns: { youtube: { index: 'youtube.com/', id: null, src: '%id%' } } }
+      });
+   });
+</script>
+</head>
+<body>
+   <div id="wb_navigation">
+      <div id="navigation">
+         <div class="row">
+            <div class="col-1">
+               <div id="RollOver1" style="overflow:hidden;z-index:0">
+                  <a href="">
+                     <img class="hover" alt="" src="images/logo_tugemteknoloji_2.png" width="105" height="77">
+                     <span><img alt="" src="images/logo_tugemteknoloji_1.png" width="105" height="77"></span>
+                  </a>
+               </div>
+            </div>
+            <div class="col-2">
+               <div id="wb_navigationMenu" style="display:inline-block;width:100%;z-index:1;">
+                  <div id="navigationMenu" class="navigationMenu" style="width:100%;height:auto !important;">
+                     <div class="container">
+                        <div class="navbar-header">
+                           <button title="Hamburger Menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navigationMenu-navbar-collapse">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                           </button>
+                        </div>
+                        <div class="navigationMenu-navbar-collapse collapse">
+                           <ul class="nav navbar-nav">
+                              <li class="nav-item">
+                                 <a href="#todoCards" class="nav-link">Hakkımızda</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a href="#galleryLayoutGrid" class="nav-link">Faaliyetler</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a href="#planTripLayoutGrid" class="nav-link">Referanslar</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a href="#contact" class="nav-link">İletişim</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a href="#reviews" class="nav-link">Ekibimiz</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_welcome">
+      <div id="welcome">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_Carousel1">
+                  <div id="Carousel1" class="carousel slide" data-ride="carousel">
+                     <ol class="carousel-indicators">
+                        <li data-target="#Carousel1" data-slide-to="0" class="active"></li>
+                        <li data-target="#Carousel1" data-slide-to="1"></li>
+                        <li data-target="#Carousel1" data-slide-to="2"></li>
+                     </ol>
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <div class="carousel-innerframe">
+                              <div id="wb_welcomeText1">
+                                 <p><span style="font-weight:bold;">Mekatronik&nbsp; Uzman</span><span style="font-weight:bold;">ı</span></p>
+                                 <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                              </div>
+                              <div id="wb_welcomeText2">
+                                 <p>Tugem Teknoloji, endüstriyel otomasyon ağırlıklı olmak üzere mekatronik projelerin tasarımı ve üretimi konularında faaliyet gösteren, tecrübeli çekirdek kadroya sahip bir kuruluştur.</p>
+                                 <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                              </div>
+                              <a id="welcomeButton1" href="#todoCards" style="display:inline-block;width:141px;height:37px;z-index:4;">İncele</a>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="carousel-innerframe">
+                              <div id="wb_welcomeText3">
+                                 <p><span style="font-weight:bold;">Ü</span><span style="font-weight:bold;">retim ve Servis</span></p>
+                                 <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                              </div>
+                              <div id="wb_welcomeText4">
+                                 <p style="font-size:27px;line-height:30px;"><span style="font-size:19px;line-height:21px;">&nbsp;</span>2006 yılında makine otomasyonuna ağırlık vererek “TUGEM TEKNOLOJİ” ünvanıyla Türkiye Sanayisinde yerini almış ve hedeflerine ulaşmak için çalışmaya devam etmektedir.</p>
+                                 <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                              </div>
+                              <a id="welcomeButton2" href="#planTripLayoutGrid" style="display:inline-block;width:141px;height:37px;z-index:7;">İncele</a>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="carousel-innerframe">
+                              <div id="wb_welcomeText5">
+                                 <p><span style="font-weight:bold;">Ç</span><span style="font-weight:bold;">ekirdekten Yeti</span><span style="font-weight:bold;">şme</span></p>
+                                 <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                              </div>
+                              <div id="wb_welcomeText6">
+                                 <p>Elektroniğe küçük yaşta başlayan merakı nedeniyle ortaokul yıllarında çıraklık ile iş hayatına adım attıktan sonra eğitim, öğretimini Meslek lisesi elektrik,&nbsp; Elektrik-elektronik Mühendisliği ve Makine mühendisliği olarak devam ettiren İsmail Eliş; Eğitim yıllarında ve Mezuniyetinin ardından seçkin sektör ve pozisyonlarda, sanayinin içinde, bilgisini tecrübeye dönüştürmüştür.</p>
+                                 <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                              </div>
+                              <a id="welcomeButton3" href="#galleryLayoutGrid" style="display:inline-block;width:141px;height:37px;z-index:10;">İncele</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_todoCards">
+      <div id="todoCards">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_YouTube1" style="display:inline-block;width:100%;z-index:12;">
+                     <a class="iframe" id="YouTube1" title="" href="https://www.youtube.com/embed/cK1y0-0Revs?rel=1&amp;autoplay=1&amp;autohide=0"><img src="images/youtube_1_tugemteknoloji_1.png" width="248" height="361" alt=""></a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-2">
+               <div class="col-2-padding">
+                  <div id="wb_YouTube2" style="display:inline-block;width:100%;z-index:13;">
+                     <a class="iframe" id="YouTube2" title="" href="https://www.youtube.com/embed/KYtstkY7qlc?rel=1&amp;autohide=0"><img src="images/youtube_2_tugemteknoloji_1.png" width="248" height="361" alt=""></a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-3">
+               <div class="col-3-padding">
+                  <div id="wb_YouTube3" style="display:inline-block;width:100%;z-index:14;">
+                     <a class="iframe" id="YouTube3" title="" href="https://www.youtube.com/embed/XHNkIU0CZsM?rel=1&amp;autohide=0"><img src="images/youtube_3_tugemteknoloji_1.png" width="248" height="361" alt=""></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_planTrip">
+      <div id="planTrip">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_planTripHeading" style="display:inline-block;width:100%;z-index:15;">
+                  <h2 id="planTripHeading">Hakkımızda</h2>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_planTripLayoutGrid">
+      <div id="planTripLayoutGrid">
+         <div id="wb_Text1">
+            <span style="color:#FFFFFF;font-family:Arial;font-size:24px;">Teknolojiyi ihtiyaç sahiplerine ulaştırırken, müşterilerin ihtiyaç ve beklentilerine uygun projeler üretmek bunların imalat ve montajını yaparken tedarikçi ve çalışanlarının katılımıyla zamanında, kaliteli, güvenli, ekonomik hizmeti sunmaktır. Her alandaki sürekli iyileştirme faaliyeti ile maliyetleri düşürmek, müşteri memnuniyetini artırarak konusunda bölge lideri olmaktır.<br>&nbsp;&nbsp;&nbsp;&nbsp; Aranan firma olmamız yaptığımız işe verdiğimiz önemin eseridir. Gücünü yılların tecrübe ve bilgisinden alan, yaptıkları yapacaklarının teminatı olan firmamız artan müşteri portföyü ile gurur duymaktadır.<br>&nbsp;&nbsp;&nbsp;&nbsp; Yurtdışı partnerler ile çalışarak, ülkemize teknoloji transferi yapmak. TÜBİTAK destekli projelerde direk veya dolaylı olarak yer alarak Türkiye Teknolojisinin yükselmesine katkı sağlamak “TUGEM TEKNOLOJİ” nin hedefidir.</span>
+         </div>
+      </div>
+   </div>
+   <div id="wb_LayoutGrid1">
+      <div id="LayoutGrid1">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_Heading1" style="display:inline-block;width:100%;z-index:17;">
+                  <h1 id="Heading1"><br>Çalıştığımız referans firmalar;<br></h1>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_attractions">
+      <div id="attractions">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="RollOver2" style="overflow:hidden;z-index:18">
+                     <a href="">
+                        <img class="hover" alt="" src="images/1583818753218.jpg" width="75" height="75">
+                        <span><img alt="" src="images/1583818753218.png" width="75" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver4" style="overflow:hidden;z-index:19">
+                     <a href="">
+                        <img class="hover" alt="" src="images/202101261001479.jpg" width="115" height="75">
+                        <span><img alt="" src="images/vestel_2.jpg" width="115" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver3" style="overflow:hidden;z-index:20">
+                     <a href="">
+                        <img class="hover" alt="" src="images/alpler_1.jpg" width="75" height="75">
+                        <span><img alt="" src="images/alpler_2.jpg" width="75" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver5" style="overflow:hidden;z-index:21">
+                     <a href="">
+                        <img class="hover" alt="" src="images/egeuniversitesi_1.png" width="75" height="75">
+                        <span><img alt="" src="images/egeuniversitesi_2.png" width="75" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver6" style="overflow:hidden;z-index:22">
+                     <a href="">
+                        <img class="hover" alt="" src="images/granit_1.jpg" width="75" height="75">
+                        <span><img alt="" src="images/granit_2.jpg" width="75" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver7" style="overflow:hidden;z-index:23">
+                     <a href="">
+                        <img class="hover" alt="" src="images/hayes_1.png" width="75" height="75">
+                        <span><img alt="" src="images/hayles_2.png" width="75" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver8" style="overflow:hidden;z-index:24">
+                     <a href="">
+                        <img class="hover" alt="" src="images/heraeus_1.jpg" width="114" height="75">
+                        <span><img alt="" src="images/heraeus_2.jpg" width="114" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver9" style="overflow:hidden;z-index:25">
+                     <a href="">
+                        <img class="hover" alt="" src="images/hidropar_1.PNG" width="237" height="75">
+                        <span><img alt="" src="images/hidropar_2.png" width="237" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver10" style="overflow:hidden;z-index:26">
+                     <a href="">
+                        <img class="hover" alt="" src="images/iztek_1.png" width="75" height="75">
+                        <span><img alt="" src="images/iztek_2.png" width="75" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver11" style="overflow:hidden;z-index:27">
+                     <a href="">
+                        <img class="hover" alt="" src="images/klimasan_1.jpg" width="114" height="75">
+                        <span><img alt="" src="images/klimasan_2.jpg" width="114" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver12" style="overflow:hidden;z-index:28">
+                     <a href="">
+                        <img class="hover" alt="" src="images/maxion_1.jpg" width="114" height="75">
+                        <span><img alt="" src="images/maxion_2.jpg" width="114" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver13" style="overflow:hidden;z-index:29">
+                     <a href="">
+                        <img class="hover" alt="" src="images/mts_1.jpg" width="120" height="75">
+                        <span><img alt="" src="images/mts_2.jpg" width="120" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver14" style="overflow:hidden;z-index:30">
+                     <a href="">
+                        <img class="hover" alt="" src="images/renklermakina_1.jpg" width="191" height="75">
+                        <span><img alt="" src="images/renklermakina_2.jpg" width="191" height="75"></span>
+                     </a>
+                  </div>
+                  <div id="RollOver15" style="overflow:hidden;z-index:31">
+                     <a href="">
+                        <img class="hover" alt="" src="images/tirsan_1.jpg" width="114" height="75">
+                        <span><img alt="" src="images/tirsan_2.jpg" width="114" height="75"></span>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_gallery">
+      <div id="gallery">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_galleryHeading" style="display:inline-block;width:100%;z-index:32;">
+                  <h2 id="galleryHeading">Galeri</h2>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_galleryLayoutGrid">
+      <div id="galleryLayoutGrid">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_galleryCollage" style="display:inline-block;width:100%;z-index:33;">
+                     <div id="galleryCollage">
+                        <div class="thumbnails">
+                           <figure class="thumbnail">
+                              <a href="images/2x97kkaebf.jpg" data-rel="galleryCollage"><img alt="" src="images/2x97kkaebf.jpg" loading="lazy" class="image" width="273" height="171"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/6fv1knrns6.jpg" data-rel="galleryCollage"><img alt="" src="images/6fv1knrns6.jpg" loading="lazy" class="image" width="273" height="362"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/9s70wnw9t7.jpg" data-rel="galleryCollage"><img alt="" src="images/9s70wnw9t7.jpg" loading="lazy" class="image" width="273" height="364"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/81m2ycckqe.jpg" data-rel="galleryCollage"><img alt="" src="images/81m2ycckqe.jpg" loading="lazy" class="image" width="273" height="181"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/ei3msmucvj.jpg" data-rel="galleryCollage"><img alt="" src="images/ei3msmucvj.jpg" loading="lazy" class="image" width="273" height="182"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/IMG_20151203_200118.jpg" data-rel="galleryCollage"><img alt="" src="images/IMG_20151203_200118.jpg" loading="lazy" class="image" width="273" height="368"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/IMG_20151203_200130.jpg" data-rel="galleryCollage"><img alt="" src="images/IMG_20151203_200130.jpg" loading="lazy" class="image" width="273" height="202"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/IMG_20151203_200130.jpg" data-rel="galleryCollage"><img alt="" src="images/IMG_20151203_200130.jpg" loading="lazy" class="image" width="273" height="202"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/l0vswob6ev.jpg" data-rel="galleryCollage"><img alt="" src="images/l0vswob6ev.jpg" loading="lazy" class="image" width="273" height="181"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/mwnbkkbufb.jpg" data-rel="galleryCollage"><img alt="" src="images/mwnbkkbufb.jpg" loading="lazy" class="image" width="273" height="363"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/njapdj7km5.jpg" data-rel="galleryCollage"><img alt="" src="images/njapdj7km5.jpg" loading="lazy" class="image" width="273" height="355"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/qpgl8171ok.jpg" data-rel="galleryCollage"><img alt="" src="images/qpgl8171ok.jpg" loading="lazy" class="image" width="273" height="178"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/qpgl8171ok.jpg" data-rel="galleryCollage"><img alt="" src="images/qpgl8171ok.jpg" loading="lazy" class="image" width="273" height="178"></a>
+                           </figure>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_reviews">
+      <div id="reviews">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_reviewsHeading" style="display:inline-block;width:100%;z-index:34;">
+                  <h2 id="reviewsHeading">Ekibimiz</h2>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_reviewsContainer">
+      <div id="reviewsContainer" class="owl-carousel owl-theme">
+         <div id="wb_reviewsCard1" style="display:flex;z-index:35;" class="card">
+            <div id="reviewsCard1-card-body">
+               <img id="reviewsCard1-card-item0" src="images/ismailelis_tugemteknoloji.jpg" width="900" height="900" alt="" title="">
+               <div id="reviewsCard1-card-item1">İsmail Eliş</div>
+               <div id="reviewsCard1-card-item2">Kurucu Şirket Müdürü & Makine ve Elektrik-Elektronik Mühendisi</div>
+               <div id="reviewsCard1-card-item3">Elektroniğe küçük yaşta başlayan merakı nedeniyle ortaokul yıllarında çıraklık ile iş hayatına adım attıktan sonra eğitim, öğretimini Meslek lisesi elektrik,  Elektrik-elektronik Mühendisliği ve Makine mühendisliği olarak devam ettiren İsmail Eliş; Eğitim yıllarında ve Mezuniyetinin ardından seçkin sektör ve pozisyonlarda, sanayinin içinde, bilgisini tecrübeye dönüştürmüştür. 1996 yılında kendi firmasını kurarak  Talaşlı ve Kaynaklı İmalat Atölyesi olan “Egemen Mühendislik” ünvanıyla çalışmaya başlamış değişik sektörlere makineler tasarlamış ve üretimini gerçekleştirmiştir.  2006 yılında makine otomasyonuna ağırlık vererek “TUGEM TEKNOLOJİ” ünvanıyla Türkiye Sanayisinde yerini almış ve hedeflerine ulaşmak için çalışmaya devam etmektedir.</div>
+            </div>
+         </div>
+         <div id="wb_reviewsCard2" style="display:flex;z-index:36;" class="card">
+            <div id="reviewsCard2-card-body">
+               <img id="reviewsCard2-card-item0" src="images/ozgurelis_tugemteknoloji.jpg" width="200" height="200" alt="" title="">
+               <div id="reviewsCard2-card-item1">Özgür Eliş</div>
+               <div id="reviewsCard2-card-item2">Satınalma Lojistik Müdürü</div>
+               <div id="reviewsCard2-card-item3"><br>Küçük yaşlardan itibaren aile şirketinde çalışmalarını sürdürmekte olup; Önlisans eğitimini Anadolu Üniversitesi Spor Yönetimi bölümünde tamamlayıp, lisans eğitimine ise Manisa Celal Bayar Üniversitesi İşletme bölümünde devam etmektedir. Orta derecede İngilizce bilmekte olup lojistik ve taşımacılık sektöründe hem aile şirketinde hem özel sektörde faaliyetlerini sürdürmektedir.</div>
+            </div>
+         </div>
+         <div id="wb_Card1" style="display:flex;z-index:37;" class="card">
+            <div id="Card1-card-body">
+               <img id="Card1-card-item0" src="images/hikmetelis_tugemteknoloji.jpg" width="1387" height="1425" alt="" title="">
+               <div id="Card1-card-item1">Hikmet Eliş</div>
+               <div id="Card1-card-item2">Finansal ve Mali, İdari İşler Sorumlusu </div>
+               <div id="Card1-card-item3">Lisans eğitimini Ege Üniversitesi Mühendislik Fakültesi Kimya Mühendisliği bölümünde tamamlayıp, özel sektördeki çalışma yaşamının ardından aile şirketinde finansal ve idari işlerin yürütülmesinden sorumludur.</div>
+            </div>
+         </div>
+         <div id="wb_reviewsCard4" style="display:flex;z-index:38;" class="card">
+            <div id="reviewsCard4-card-body">
+               <img id="reviewsCard4-card-item0" src="images/egemenelis_tugemteknoloji.PNG" width="254" height="263" alt="" title="">
+               <div id="reviewsCard4-card-item1">Egemen Eliş</div>
+               <div id="reviewsCard4-card-item2">Bakım & Onarım Sorumlusu</div>
+               <div id="reviewsCard4-card-item3">Lise eğitimini Bornova Anadolu Lisesinde tamamlamasının ardından (İYTE) İzmir Yüksek Teknoloji Enstitüsü'nde Makine Mühendisliği bölümünde eğitim hayatına devam etmektedir. İyi derecede İngilizce bilmekte olup, çocukluğundan itibaren aile şirketinde çalışmalarında devam etmektedir.</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_contact">
+      <div id="contact">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_contactHeading" style="display:inline-block;width:100%;z-index:42;">
+                  <h2 id="contactHeading">İletişim</h2>
+               </div>
+               <div id="FlexContainer1">
+                  <div id="wb_Card4" style="display:flex;text-align:center;z-index:39;" class="card">
+                     <div id="Card4-card-body">
+                        <div id="Card4-card-item0"><i class="fa fa-envelope-open"></i></div>
+                        <div id="Card4-card-item1">Mail</div>
+                        <div id="Card4-card-item2">info@tugem.net<br>ismail@tugem.net <br>hikmet@tugem.net</div>
+                     </div>
+                  </div>
+                  <div id="wb_Card3" style="display:flex;text-align:center;z-index:40;" class="card">
+                     <div id="Card3-card-body">
+                        <div id="Card3-card-item0"><i class="fa fa-phone"></i></div>
+                        <div id="Card3-card-item1">Telefon</div>
+                        <div id="Card3-card-item2">+90 533 358 84 64<br>+90 533 741 38 28</div>
+                     </div>
+                  </div>
+                  <div id="wb_Card2" style="display:flex;text-align:center;z-index:41;" class="card">
+                     <div id="Card2-card-body">
+                        <div id="Card2-card-item0"><a href="javascript:displaylightbox('https://goo.gl/maps/u1QpcweE1EHrHL1f6',{})" target="_self"><i class="fa fa-map-marker"></i></a></div>
+                        <div id="Card2-card-item1">Konum Bilgisi</div>
+                        <div id="Card2-card-item2">Tugem Teknoloji Uygulama Geliştirme Elektrik Makina Ltd.Sti. Ata, 779 Sk, 09010 Efeler/Aydın<br></div>
+                        <div id="Card2-card-item3">(Harita uygulaması için konum simgesine tıklayınız)</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="StickyLayer" style="position:fixed;text-align:left;left:auto;right:25px;top:auto;bottom:25px;width:50px;height:50px;z-index:73;" data-250-start="opacity:1;" data-start="opacity:0;">
+      <div id="wb_up-arrow" style="position:absolute;left:9px;top:8px;width:24px;height:24px;text-align:center;z-index:44;">
+         <a href="#welcome"><div id="up-arrow"><i class="fa fa-angle-up"></i></div></a></div>
+   </div>
+   <div id="wb_footer" style="z-index:10000 !important;">
+      <div id="footer">
+         <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-2">
+               <div id="wb_footerText">
+                  <p>Copyright © 2021&nbsp;by Mustafa Akdeniz &amp; Alperen Şimşek</p>
+               </div>
+            </div>
+            <div class="col-3">
+               <div id="wb_footerIcon1" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:55;">
+                  <a href="https://www.youtube.com/channel/UCkW3VXHWWF1ILYmn8m5EXBQ" target="_blank"><div id="footerIcon1"><i class="fa fa-youtube-play"></i></div></a>
+               </div>
+               <div id="wb_footerIcon2" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:56;">
+                  <a href="https://www.instagram.com/tugem.ismail/" target="_blank"><div id="footerIcon2"><i class="fa fa-instagram"></i></div></a>
+               </div>
+               <div id="wb_footerIcon3" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:57;">
+                  <a href="https://tr.linkedin.com/company/tugem-teknoloji" target="_blank"><div id="footerIcon3"><i class="fa fa-linkedin-square"></i></div></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <a href="https://www.wysiwygwebbuilder.com" target="_blank"><img src="images/builtwithwwb17.png" alt="WYSIWYG Web Builder" style="position:absolute;left:441px;top:5240px;margin:0;border-width:0;z-index:250" width="16" height="16"></a>
+</body>
+</html>
